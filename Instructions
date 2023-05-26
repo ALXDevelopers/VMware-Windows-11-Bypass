@@ -23,7 +23,7 @@ This will bring up cmd - next type the three commands (below the forward slash l
 
 
 
-reg add HKLM System\Setup\LabConfig /v ByapssTPMCheck /t reg_dword /d 1
+reg add HKLM\System\Setup\LabConfig /v ByapssTPMCheck /t reg_dword /d 1
 
 
 
