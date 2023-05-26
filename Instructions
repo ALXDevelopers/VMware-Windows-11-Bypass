@@ -1,0 +1,48 @@
+VMware Workstation, ESXi Server and ESXi Server *(Nested) 
+When installing Windows 11 from an ISO within ESXi or VMware Workstation
+Compatabilty Issues w/ Windows 11 (This PC Doesnt Meet The Requriement)
+
+VWwawre Workstation, ESXi Server and ESXi Server *(Nested) 
+may not allow you to add, encrpyt or select secureboot to be 
+turned on even if your machine maintains a TPM.
+
+When reaching that screen and being prompted with that error - 
+
+You need to get to cmd to execute command within the registry of the install
+
+When you see this message - on your keyboard press
+
+Shift + F10
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+This will bring up cmd - next type the three commands (below the forward slash line) seperatly and press enter after you input each one. 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+reg add HKLM System\Setup\LabConfig /v ByapssTPMCheck /t reg_dword /d 1
+
+
+
+reg add HKLM\System\Setup\LabConfia /v BypassSecureBootCheck /t reg_dword /d 1
+
+
+
+reg add HKLM\System\Setup\LabConfig /v BypassRAMCheck /t reg_dword /d 1
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+After you input each of the three you will likely get a confirmation message regarding thier creation --
+
+After youre done, you may exit. At this point you may continue to install you may have to hit cancel to bring you back to
+the previous page to initiate the installation process again.
+
+PLEASE DO NOT RESTART YOUR MACHINE TO START OVER - YOU WILL HAVE TO RETYPE ALL OF THE ABOVE 
+
+I really hope this helps. 
+
